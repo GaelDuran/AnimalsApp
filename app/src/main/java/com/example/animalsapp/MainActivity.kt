@@ -1,4 +1,4 @@
-package com.example.animalapp
+package com.example.animalsapp
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -6,6 +6,11 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.List
+import androidx.compose.material.icons.filled.List
+import androidx.compose.material.icons.filled.Place
 import androidx.compose.material3.*
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -17,17 +22,17 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.animalapp.screens.AnimalDetailScreen
-import com.example.animalapp.screens.AnimalListScreen
-import com.example.animalapp.screens.EnvironmentDetailScreen
-import com.example.animalapp.screens.EnvironmentListScreen
-import com.example.animalapp.theme.AnimalAppTheme
+import com.example.animalsapp.screens.AnimalDetailScreen
+import com.example.animalsapp.screens.AnimalListScreen
+import com.example.animalsapp.screens.EnvironmentDetailScreen
+import com.example.animalsapp.screens.EnvironmentListScreen
+import com.example.animalsapp.ui.theme.AnimalsAppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AnimalAppTheme {
+            AnimalsAppTheme {
                 var selectedScreen by remember { mutableStateOf("animals") }
                 val navController = rememberNavController()
                 Scaffold(
