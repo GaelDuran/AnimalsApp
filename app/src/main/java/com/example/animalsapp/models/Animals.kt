@@ -47,6 +47,24 @@ val mockAnimalList = listOf(
         ),
         id = "680d2122d10bbc79144edbbf"
     ),
+    Animals(
+        name = "Elefante",
+        description = "Los elefantes son mamíferos grandes de la familia Elephantidae y el orden Proboscidea. Actualmente se reconocen tres especies: el elefante africano de sabana, el elefante africano de bosque y el elefante asiático.",
+        image = "https://files.worldwildlife.org/wwfcmsprod/images/elephants_at_water_hole_WW2122503_Anup_Shah/story_full_width/7ozyekgso2_Medium_WW2122503.jpg",
+        imageGallery = listOf(
+            "https://www.nationalgeographic.com.es/medio/2020/03/04/elefante-en-el-parque-nacional-de-amboseli-con-el-kilimanjaro-al-fondo_4308fa58_800x800.jpg",
+            "https://www.nationalgeographic.com.es/medio/2023/04/28/agarran-los-objetos-envolviendolos-con-la-trompa_9626e53e_358525301_230428113115_800x800.jpg",
+            "https://d7lju56vlbdri.cloudfront.net/var/ezwebin_site/storage/images/_aliases/seo/noticias/efectos-a-largo-plazo-de-la-caza-furtiva-los-elefantes-sin-madre-sobreviven-menos/9204524-1-esl-MX/Efectos-a-largo-plazo-de-la-caza-furtiva-los-elefantes-sin-madre-sobreviven-menos.jpg"
+        ),
+        environmentId = "680c0510d10bbc79144edbb9",
+        facts = listOf(
+            "Los elefantes son capaces de experimentar una amplia gama de emociones, incluyendo alegría, enojo, dolor y juego.",
+            "La trompa de un elefante tiene más de 40,000 músculos y tendones.",
+            "Los elefantes tienen un fuerte sentido de la familia y se sabe que lamentan a sus muertos."
+        ),
+        id = "680d2122d10bbc79144edbc0"
+    ),
+
 
 
 
