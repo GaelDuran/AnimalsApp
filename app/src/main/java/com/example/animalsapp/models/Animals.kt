@@ -64,6 +64,23 @@ val mockAnimalList = listOf(
         ),
         id = "680d2122d10bbc79144edbc0"
     ),
+    Animals(
+        name = "Delfín",
+        description = "Los delfines son un grupo ampliamente distribuido de mamíferos marinos conocidos por su inteligencia, comportamiento social y exhibiciones acrobáticas.",
+        image = "https://images.dolphinaris.com/images/2015/03/5-curiosidades-sobre-los-delfines-Dolphinaris.jpg",
+        imageGallery = listOf(
+            "https://www.delphinusworld.com/hubfs/Delph_Portada7_DatosDeLosDelfines.jpg",
+            "https://aquaworld.com.mx/uploads/0000/1/2023/06/15/15-hechos-curiosos-sobre-delfines-1100x619.jpg",
+            "https://imagenes.muyinteresante.es/files/composte_image/uploads/2023/05/12/645df57d041b4.jpeg"
+        ),
+        environmentId = "680c0510d10bbc79144edbba",
+        facts = listOf(
+            "Los delfines utilizan un sistema complejo de clics y silbidos para comunicarse entre sí.",
+            "Algunas especies de delfines pueden nadar a velocidades de hasta 37 mph (60 km/h).",
+            "Los delfines han sido conocidos por salvar a los humanos de tiburones y guiar a nadadores perdidos de regreso a la orilla."
+        ),
+        id = "680d2122d10bbc79144edbc1"
+    ),
 
 
 
