@@ -9,16 +9,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import com.example.animalsapp.models.Animals
 
 @Composable
-fun HomeScreen(innerPadding: PaddingValues) {
+fun HomeScreen(animals: List<Animals>, onAnimalClick: (Animals) -> Unit, navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(innerPadding)
-            .background(Color(0xFF014421)),
-
-    ) {  }
+            .background(Color(0xFF1B5E20))
+            .padding(16.dp)
+    ){}
 }
 
 @Preview
