@@ -81,6 +81,24 @@ val mockAnimalList = listOf(
         ),
         id = "680d2122d10bbc79144edbc1"
     ),
+    Animals(
+        name = "Tigre",
+        description = "El tigre (Panthera tigris) es la especie de felino más grande y miembro del género Panthera. Son animales solitarios y se sabe que son capaces de nadar.",
+        image = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Tigress_at_Jim_Corbett_National_Park.jpg/250px-Tigress_at_Jim_Corbett_National_Park.jpg",
+        imageGallery = listOf(
+            "https://s1.eestatic.com/2023/07/29/ciencia/782681856_235038553_1706x960.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Sumatratiger-004.jpg/220px-Sumatratiger-004.jpg",
+            "https://files.worldwildlife.org/wwfcmsprod/images/Tiger_resting_Bandhavgarh_National_Park_India/hero_small/6aofsvaglm_Medium_WW226365.jpg"
+        ),
+        environmentId = "680c0510d10bbc79144edbbb",
+        facts = listOf(
+            "Los tigres son excelentes nadadores y a menudo se refrescan descansando en estanques o arroyos.",
+            "Un grupo de tigres se conoce como una 'racha' o un 'emboscada'.",
+            "Los tigres tienen manchas blancas distintivas en la parte posterior de sus orejas llamadas 'manchas oculares'."
+        ),
+        id = "680d2122d10bbc79144edbc2"
+    )
+)
 
 
 
