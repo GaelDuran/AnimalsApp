@@ -19,35 +19,35 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.example.animalsapp.ui.theme.AnimalsAppTheme
+//
+//class MainActivity : ComponentActivity() {
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        enableEdgeToEdge()
+//        setContent {
+//            AnimalsAppTheme {
+//                val navController = rememberNavController()
+//                var selectedScreen by remember { mutableStateOf("animals") }
 
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            AnimalsAppTheme {
-                val navController = rememberNavController()
-                var selectedScreen by remember { mutableStateOf("animals") }
+//                Scaffold(
+//                    modifier = Modifier.
+//                    fillMaxSize())
 
-                Scaffold(
-                    modifier = Modifier.
-                    fillMaxSize())
-
-                { innerPadding ->
-                    NavHost(
-                        navController = NavController,
-                        startDestination = "animals"
-                    ){
-                        composable("animals") {
-                            AnimaslScreen(innerPadding = innerPadding)
-                        }
-                        composable("enviroment"){
-                            EnvironmentScreen(innerPadding = innerPadding)
-                        }
-                    }
-
-                }
-            }
-        }
-    }
-}
+//                { innerPadding ->
+//                    NavHost(
+//                        navController = NavController,
+//                        startDestination = "animals"
+//                    ){
+//                        composable("animals") {
+//                            AnimaslScreen(innerPadding = innerPadding)
+//                        }
+//                        composable("enviroment"){
+//                            EnvironmentScreen(innerPadding = innerPadding)
+//                        }
+//                    }
+//
+//                }
+//            }
+//        }
+//    }
+//}

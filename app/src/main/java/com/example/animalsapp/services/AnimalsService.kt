@@ -5,5 +5,5 @@ import retrofit2.http.GET
 
 interface AnimalsService {
     @GET("animals")
-    suspend fun getAnimals(): List<Animals>
+    suspend fun getAnimals(): Animals
 }
