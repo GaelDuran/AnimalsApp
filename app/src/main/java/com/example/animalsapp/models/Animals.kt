@@ -1,3 +1,3 @@
 package com.example.animalsapp.models
 
-data class Animals()
+class Animals : ArrayList<AnimalsItem>()
