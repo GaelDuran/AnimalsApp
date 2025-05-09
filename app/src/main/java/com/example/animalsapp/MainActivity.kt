@@ -3,105 +3,49 @@ package com.example.animalsapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.background
+import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.List
-import androidx.compose.material.icons.filled.List
-import androidx.compose.material.icons.filled.Place
-import androidx.compose.material3.*
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.animalsapp.screens.AnimalDetailScreen
-import com.example.animalsapp.screens.AnimalListScreen
-import com.example.animalsapp.screens.EnvironmentDetailScreen
-import com.example.animalsapp.screens.EnvironmentListScreen
 import com.example.animalsapp.ui.theme.AnimalsAppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContent {
             AnimalsAppTheme {
-                var selectedScreen by remember { mutableStateOf("animals") }
                 val navController = rememberNavController()
+                var selectedScreen by remember { mutableStateOf("animals") }
+
                 Scaffold(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .background(Color(0xFF0D0D2B)),
-                    contentColor = Color.Transparent,
-                    containerColor = Color.Transparent,
-                    bottomBar = {
-                        NavigationBar(
-                            containerColor = Color(0xFF0D0D2B).copy(alpha = 0.9f)
-                        ) {
-                            NavigationBarItem(
-                                selected = selectedScreen == "animals",
-                                onClick = {
-                                    selectedScreen = "animals"
-                                    navController.navigate("animals")
-                                },
-                                icon = {
-                                    Icon(
-                                        imageVector = Icons.Default.List,
-                                        contentDescription = "Animals",
-                                        tint = Color.White,
-                                        modifier = Modifier.size(30.dp)
-                                    )
-                                },
-                                colors = NavigationBarItemDefaults.colors(
-                                    indicatorColor = Color.White.copy(alpha = 0.2f)
-                                )
-                            )
-                            NavigationBarItem(
-                                selected = selectedScreen == "environments",
-                                onClick = {
-                                    selectedScreen = "environments"
-                                    navController.navigate("environments")
-                                },
-                                icon = {
-                                    Icon(
-                                        imageVector = Icons.Default.Place,
-                                        contentDescription = "Environments",
-                                        tint = Color.White,
-                                        modifier = Modifier.size(30.dp)
-                                    )
-                                },
-                                colors = NavigationBarItemDefaults.colors(
-                                    indicatorColor = Color.White.copy(alpha = 0.2f)
-                                )
-                            )
-                        }
-                    }
-                ) { innerPadding ->
+                    modifier = Modifier.
+                    fillMaxSize())
+
+                { innerPadding ->
                     NavHost(
-                        navController = navController,
-                        startDestination = "animals",
-                        modifier = Modifier.padding(innerPadding)
-                    ) {
-                        composable("animals") { AnimalListScreen(navController) }
-                        composable("environments") { EnvironmentListScreen(navController) }
-                        composable("animal_detail/{animalId}") { backStackEntry ->
-                            AnimalDetailScreen(
-                                animalId = backStackEntry.arguments?.getString("animalId") ?: ""
-                            )
+                        navController = NavController,
+                        startDestination = "animals"
+                    ){
+                        composable("animals") {
+                            AnimaslScreen(innerPadding = innerPadding)
                         }
-                        composable("environment_detail/{environmentId}") { backStackEntry ->
-                            EnvironmentDetailScreen(
-                                environmentId = backStackEntry.arguments?.getString("environmentId") ?: ""
-                            )
+                        composable("enviroment"){
+                            EnvironmentScreen(innerPadding = innerPadding)
                         }
                     }
+
                 }
             }
         }
