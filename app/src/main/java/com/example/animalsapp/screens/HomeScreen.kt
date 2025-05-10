@@ -56,7 +56,9 @@ fun HomeScreen(innerPadding: PaddingValues) {
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             items(animals) { animal ->
-                AnimalCard(animal)
+                AnimalCard(animal = animal, onClick = {
+                    Log.d("HomeScreen", "Animal seleccionado: ${animal.name}")
+                })
             }
         }
     }
