@@ -1,6 +1,6 @@
 package com.example.animalsapp.services
 
-import android.os.Environment
+import com.example.animalsapp.models.Environment
 import retrofit2.http.GET
 
 interface EnvironmentService {
