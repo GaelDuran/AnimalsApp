@@ -63,7 +63,8 @@ fun AnimalsScreen() {
                     .fillMaxSize()
             ) {
                 items(animals) { animal ->
-                    AnimalCard(animal)
+                    AnimalCard(animal = animal, onClick = {
+                    })
                 }
             }
         }
