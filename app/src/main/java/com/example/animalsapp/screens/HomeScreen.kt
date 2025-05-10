@@ -87,8 +87,8 @@ fun HomeScreen(innerPadding: PaddingValues, animals: List<Animals>, navControlle
     }
 }
 
-@Preview
-@Composable
-fun HomeScreenPreview() {
-
-}
+//@Preview
+//@Composable
+//fun HomeScreenPreview() {
+//
+//}
