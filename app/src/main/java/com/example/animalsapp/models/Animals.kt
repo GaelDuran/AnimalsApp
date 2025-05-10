@@ -12,6 +12,13 @@ data class Animals(
     val name: String
 )
 
+data class Environment(
+    val id: String,
+    val name: String,
+    val image: String
+)
+
+
 val mockAnimalList = listOf(
     Animals(
         name = "Nutria Asian Small-Clawed",

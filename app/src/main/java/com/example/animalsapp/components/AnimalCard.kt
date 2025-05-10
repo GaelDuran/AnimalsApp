@@ -23,7 +23,7 @@ import com.example.animalsapp.models.Animals
 
 
 @Composable
-fun AnimalCard(animal: Animals) {
+fun AnimalCard(animal: Animals, onClick: () -> Unit) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
