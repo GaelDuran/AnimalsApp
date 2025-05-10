@@ -8,6 +8,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.example.animalsapp.components.AnimalCard
 import com.example.animalsapp.models.Animals
 import com.example.animalsapp.services.AnimalsService
 import kotlinx.coroutines.Dispatchers
@@ -15,6 +16,7 @@ import kotlinx.coroutines.withContext
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AnimalsScreen() {
     var animals by remember { mutableStateOf<List<Animals>>(emptyList()) }
