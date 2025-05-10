@@ -23,6 +23,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.example.animalsapp.components.AnimalCard
 import com.example.animalsapp.models.Animals
 import com.example.animalsapp.services.AnimalsService
@@ -32,7 +33,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 @Composable
-fun HomeScreen(innerPadding: PaddingValues) {
+fun HomeScreen(innerPadding: PaddingValues, animals: List<Animals>, navController: NavController) {
     var animals by remember { mutableStateOf<List<Animals>>(emptyList()) }
     var isLoading by remember { mutableStateOf(true) }
 
@@ -89,5 +90,5 @@ fun HomeScreen(innerPadding: PaddingValues) {
 @Preview
 @Composable
 fun HomeScreenPreview() {
-    HomeScreen(innerPadding = PaddingValues())
+
 }
