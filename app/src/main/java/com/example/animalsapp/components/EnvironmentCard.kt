@@ -42,7 +42,6 @@ fun EnvironmentCard(environment: Environment, onClick: () -> Unit) {
                     .clip(CircleShape),
                 contentScale = ContentScale.Crop
             )
-
             Text(
                 text = environment.name,
                 style = MaterialTheme.typography.titleLarge,
