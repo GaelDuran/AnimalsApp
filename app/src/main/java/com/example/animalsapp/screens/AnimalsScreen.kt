@@ -10,5 +10,3 @@ fun AnimalsScreen(animals: Animals) {
 
 }
 
-
-}
