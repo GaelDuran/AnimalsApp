@@ -26,7 +26,7 @@ fun AnimalsScreen() {
         isLoading = true
         animals = try {
             val retrofit = Retrofit.Builder()
-                .baseUrl("https://your-api-url.com/") // Reemplaza con tu base URL
+                .baseUrl("https://animals.juanfrausto.com/api/animals") // Reemplaza con tu base URL
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
 
