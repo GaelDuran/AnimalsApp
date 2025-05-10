@@ -21,6 +21,7 @@ fun EnvironmentScreen(
 ) {
     val filteredAnimals = animals.filter { it.environmentId == environmentId }
 
+    @OptIn(ExperimentalMaterial3Api::class)
     Scaffold(
         topBar = { TopAppBar(title = { Text("Ambiente") }) }
     ) { padding ->
