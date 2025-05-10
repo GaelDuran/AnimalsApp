@@ -18,32 +18,29 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AnimalsScreen() {
-    var animals by remember { mutableStateOf<List<Animals>>(emptyList()) }
+fun AnimalsDetailScreen(animalId: String) {
+    var animal by remember { mutableStateOf<Animals?>(null) }
     var isLoading by remember { mutableStateOf(true) }
 
     LaunchedEffect(Unit) {
         isLoading = true
-        animals = try {
+        try {
             val retrofit = Retrofit.Builder()
-                .baseUrl("https://animals.juanfrausto.com/api/animals") // Reemplaza con tu base URL
+                .baseUrl("https://animals.juanfrausto.com/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
-
             val service = retrofit.create(AnimalsService::class.java)
-            withContext(Dispatchers.IO) {
-                service.getAnimals()
-            }
+            val animals = withContext(Dispatchers.IO) { service.getAnimals() }
+            animal = animals.find { it.id == animalId }
         } catch (e: Exception) {
-            emptyList()
+            animal = null
+        } finally {
+            isLoading = false
         }
-        isLoading = false
     }
 
     Scaffold(
-        topBar = {
-            TopAppBar(title = { Text("Animales") })
-        }
+        topBar = { TopAppBar(title = { Text("Detalles del Animal") }) }
     ) { padding ->
         if (isLoading) {
             Box(
@@ -54,6 +51,15 @@ fun AnimalsScreen() {
             ) {
                 CircularProgressIndicator()
             }
+        } else if (animal == null) {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(padding),
+                contentAlignment = Alignment.Center
+            ) {
+                Text("Animal no encontrado")
+            }
         } else {
             LazyColumn(
                 contentPadding = padding,
@@ -62,10 +68,7 @@ fun AnimalsScreen() {
                     .padding(16.dp)
                     .fillMaxSize()
             ) {
-                items(animals) { animal ->
-                    AnimalCard(animal = animal, onClick = {
-                    })
-                }
+                item { AnimalCard(animal = animal!!, onClick = {}) }
             }
         }
     }
